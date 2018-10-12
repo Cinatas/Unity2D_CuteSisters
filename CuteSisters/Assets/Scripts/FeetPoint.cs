@@ -10,7 +10,5 @@ namespace CuteSister.Player
             if (collision.CompareTag("Ground"))
                 Player_Controller._Instance.OnGround();
         }
-
     }
-
 }

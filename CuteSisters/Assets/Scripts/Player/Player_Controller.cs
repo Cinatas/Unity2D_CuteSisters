@@ -5,8 +5,7 @@ using UnityEngine;
 namespace CuteSister.Player
 {
     public class Player_Controller : MonoBehaviour
-    {
-
+    {       
         private static Player_Controller instance = null;
         public static Player_Controller _Instance
         {
@@ -25,7 +24,13 @@ namespace CuteSister.Player
 
         public bool isGround;
 
+        public bool isDead = false;
+
         private Animator aniCon;
+
+        #region 资源文件
+        GameObject JumpFXprefab;
+        #endregion
 
         private void Awake()
         {
@@ -39,7 +44,7 @@ namespace CuteSister.Player
 
         void Start()
         {
-
+            JumpFXprefab = Resources.Load<GameObject>("FX/JumpFX");
         }
 
         // Update is called once per frame
@@ -67,6 +72,8 @@ namespace CuteSister.Player
                 _rigid2D.velocity = new Vector2(_rigid2D.velocity.x, JumpForce);
                 aniCon.SetTrigger("Jump");
                 isGround = false;
+
+                Instantiate(JumpFXprefab).transform.position = this.transform.position;
             }
         }
 
@@ -81,6 +88,23 @@ namespace CuteSister.Player
             isGround = true;
             Walk(MoveSpeed);
         }
+
+        public void Die()
+        {
+            isDead = true;
+        }
+
+        #region 外部调用
+        public float GetPlayerVerticalSpeed()
+        {
+            return this._rigid2D.velocity.y;
+        }
+
+        public void SetPlayerVerticalSpeed(float speed)
+        {
+            this._rigid2D.velocity = new Vector2(this._rigid2D.velocity.x, speed);
+        }
+        #endregion
     }
 
 }

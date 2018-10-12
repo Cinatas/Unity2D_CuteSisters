@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 70983966740119358}
   m_Layer: 0
   m_Name: Melissa
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,9 +72,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4586487510143532}
   - component: {fileID: 61195520400737716}
+  - component: {fileID: 114467470004375234}
   m_Layer: 0
   m_Name: HeadPoint
-  m_TagString: Untagged
+  m_TagString: PlayerHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4352007368119016}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4186602523146074
 Transform:
@@ -150,7 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4352007368119016}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4352007368119016
 Transform:
@@ -164,9 +165,9 @@ Transform:
   m_Children:
   - {fileID: 4006996150805618}
   - {fileID: 4436999747665424}
-  - {fileID: 4586487510143532}
   - {fileID: 4186602523146074}
   - {fileID: 4150694733900798}
+  - {fileID: 4586487510143532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -194,7 +195,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4352007368119016}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50165069804633276
 Rigidbody2D:
@@ -225,7 +226,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015900493, y: -0.50798774}
@@ -328,8 +329,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0010975301, y: -0.049717903}
-  m_Size: {x: 0.49780494, y: 0.9005642}
+  m_Offset: {x: -0.0010975301, y: -0.070540905}
+  m_Size: {x: 0.49780494, y: 0.8589182}
   m_Direction: 0
 --- !u!95 &95783205092620200
 Animator:
@@ -372,6 +373,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChangePlayerFaceTo: 0
+--- !u!114 &114467470004375234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825501195343506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adce4b4f230e4f543b67c9c1ea9156e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114518446200198524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,6 +410,7 @@ MonoBehaviour:
   FaceDir: 0
   MoveSpeed: 2
   isGround: 0
+  isDead: 0
 --- !u!212 &212219730868648620
 SpriteRenderer:
   m_ObjectHideFlags: 1
